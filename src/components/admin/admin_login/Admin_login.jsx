@@ -9,9 +9,6 @@ const Admin_login = () => {
     let api=end_points.admin
 console.log("Api for login as admin :",api);
 
-// let uuid=v4()
-// console.log("UUID---------",uuid);
-
 let navigate=useNavigate()
 let[state,setState]=useState([])
 let swAlert=(x,y,z)=>{
@@ -46,9 +43,11 @@ let passwordVerify=state.find((v)=>v.password===formData.password)
   }
   else{
     swAlert("success","Logged in successfully",1400)
-    // window.sessionStorage.setItem("token",uuid)
-    window.sessionStorage.setItem("isAdminLogged",emailVarify.id)
+    window.localStorage.setItem("isAdminLogged",emailVarify.id)
+    window.localStorage.setItem("link",'/dashboard')
     navigate(`/dashboard`)
+    window.location.reload()
+
   }
  
 }

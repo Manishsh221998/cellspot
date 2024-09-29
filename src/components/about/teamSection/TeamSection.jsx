@@ -53,7 +53,7 @@ const TeamSection = () => {
           {people.map((person) => (
             <li key={person.name}>
               <div className="flex items-center gap-x-6">
-                <img alt="" src={person.imageUrl} className="h-16 w-16 rounded-full hover:shadow-lg"/>
+                <img alt="" src={person.imageUrl} className="h-16 w-16 rounded-full shadow-inner hover:grayscale"/>
                 <div>
                   <h3 className="text-base font-semibold leading-7 tracking-tight text-gray-900 text-start">{person.name}</h3>
                   <p className="text-sm font-semibold leading-6 text-indigo-600">{person.role}</p>

@@ -1,8 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { RiAdminLine } from "react-icons/ri";
+import { MdOutlineDashboardCustomize } from "react-icons/md";
 
 const Footer = () => {
+  let linkDashboard=window.localStorage.getItem("link")
+  let adminLogged=window.localStorage.getItem("isAdminLogged")
+  let output,link
+  if(adminLogged){
+      output='Dashboard'
+    link=linkDashboard
+  }
+
+
   return (
     <div>
         <footer className="footer bg-base-200 text-base-content p-10">
@@ -36,6 +46,8 @@ const Footer = () => {
       <RiAdminLine  className='inline-block text-xl p-0.5'/>
       <Link to="/admin_login" className='link-hover'>
       Admin</Link></h6>
+      <Link to={`${link}`}><span className='text-lg font-semibold flex items-center text-[#7a3818]'>
+      {output}</span></Link>
      </nav>
   </footer>
 

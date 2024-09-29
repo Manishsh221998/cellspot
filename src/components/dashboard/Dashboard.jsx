@@ -4,7 +4,7 @@ import { axiosInstance } from "../../api/axiosInstance/axiosInstance";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { MdOutlineCurrencyRupee } from "react-icons/md";
 import { LuEye } from "react-icons/lu";
@@ -15,6 +15,7 @@ const Dashboard = () => {
   let [data, setData] = useState([]);
   let [searchText, searchTextTerm] = useState("");
 
+let nevigate=useNavigate()  
   let swAlert = (x, y, z) => {
     Swal.fire({
       title: x,
@@ -50,7 +51,11 @@ const Dashboard = () => {
   };
 
   let adminLogout=()=>{
-    window.sessionStorage.clear("isAdminLogged")
+    window.localStorage.clear("isAdminLogged")
+    window.localStorage.clear("link")
+
+     nevigate("/")
+     window.location.reload()
   }
 
   return (
@@ -307,7 +312,7 @@ ps-7 py-2.5
                           </div>
                           <div className="modal-action">
                             <form method="dialog">
-                              <button className="btn">Close</button>
+                              <button className="btn hover:shadow-lg">Close</button>
                             </form>
                           </div>
                         </div>

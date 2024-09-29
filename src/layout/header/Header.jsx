@@ -51,6 +51,7 @@ const Header = () => {
     useEffect(()=>{loginHandler()},[])
    const logOut=()=>{
       window.sessionStorage.clear()
+      window.location.reload()
       navigate('/') 
     }
 
@@ -117,7 +118,7 @@ const Header = () => {
         <img
            src={logState.profileimg}
            alt="log in"
-           className={`${logState.hide} h-9 w-9 mx-3 rounded-full object-cover animate-pulse`}
+           className={`${logState.hide} h-10 w-10 mx-3 rounded-full object-cover animate-pulse`}
          />
          
          <Link to={logState.link}
@@ -173,7 +174,7 @@ const Header = () => {
             <img
             src={logState.profileimg}
             alt="log in"
-            className={`${logState.hide} h-9 w-9 mx-3 rounded-full object-cover animate-pulse`}
+            className={`${logState.hide} h-10 w-10 mx-3 rounded-full object-cover`}
           />
                  <Link
                 to={logState.link}

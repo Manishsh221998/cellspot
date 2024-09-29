@@ -28,7 +28,8 @@ const Profile = () => {
   const logOutt=()=>{
     window.sessionStorage.clear()
     navigate('/') 
-  }
+    window.location.reload()
+   }
  
   return (
     <div className='mt-[150px] mb-60 flex justify-center'>

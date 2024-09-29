@@ -8,15 +8,13 @@ const Admin_regestration = () => {
     let api=end_points.admin
 // console.log("User Api, for form rege of admin :",api);
 
-// let uuid=v4()
-// console.log("UUID---------",uuid);
-
 let getBase64=file=>new Promise((resolve,reject)=>{
   const reader=new FileReader();
   reader.readAsDataURL(file)
   reader.onload=()=>resolve(reader.result)
   reader.onerror=reject
 })
+
 let navigate=useNavigate()
 let[oldData,setOldData]=useState([])
 let[img,setImg]=useState("")
@@ -96,8 +94,7 @@ axiosInstance.post(api,formData)
   console.log(res);
   if(res.status===201){
     swAlert("success","Sign up successfully",2000)
-    // window.sessionStorage.setItem("token",uuid)
-
+ 
       navigate("/admin_login")
   }
   else{
@@ -115,7 +112,7 @@ axiosInstance.post(api,formData)
     <div className="mx-auto max-w-screen-xl px-4 py-20 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-lg mt-10 mb-20">
         <h1 className="text-center font-semibold text-xl font-boldb sm:text-3xl text-[blue]">
-          Regesiteration 
+          Regesiter 
         </h1>
         <form className="mb-0 mt-7 space-y-4 rounded-lg p-12 shadow-lg sm:p-6 lg:p-8" onSubmit={submitHandler}>
            <div className="mt-4">

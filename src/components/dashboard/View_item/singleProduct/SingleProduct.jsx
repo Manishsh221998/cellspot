@@ -68,8 +68,8 @@ const SingleProduct = () => {
             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{category}</dd>
           </div>
           <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
-            <dt className="text-sm font-medium leading-6 text-gray-900"><MdOutlineCurrencyRupee className="inline-block text-[14px] mb-1"/>Price</dt>
-            <dd className="mt-1 text-sm font-bold leading-6 text-[#202b0b] sm:col-span-2 sm:mt-0">{price}</dd>
+            <dt className="text-sm font-medium leading-6 text-gray-900">Price</dt>
+            <dd className="mt-1 text-sm font-bold leading-6 text-[#202b0b] sm:col-span-2 sm:mt-0">{price}<MdOutlineCurrencyRupee className="inline-block text-[14px] mb-1 text-[#ff2626]"/></dd>
           </div>
           <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm font-medium leading-6 text-gray-900">Model no</dt>
@@ -77,7 +77,7 @@ const SingleProduct = () => {
           </div>
           <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm font-medium leading-6 text-gray-900">Details</dt>
-            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{product_details}</dd>
+            <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0 text-wrap">{product_details}</dd>
           </div>
           <div className="px-4 py-3 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
             <dt className="text-sm font-medium leading-6 text-gray-900">Warranty</dt>

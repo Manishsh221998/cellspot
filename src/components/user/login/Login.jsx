@@ -51,6 +51,9 @@ let passwordVerify=state.find((v)=>v.password===formData.password)
     // window.sessionStorage.setItem("token",uuid)
     window.sessionStorage.setItem("isLogged","true")
     navigate(`/user_profile/${emailVarify.id}`)
+    window.location.reload()
+     window.location.reload()
+
   }
  
 }
@@ -124,19 +127,19 @@ let formik=useFormik({
                </div>
             </div>
 
-            <button
+             <button
               type="submit"
               className="block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
 
                 // className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
             >
               Log in
-            </button>
+            </button> 
 
             <p className="text-center text-sm text-gray-500">
               If you are not registered? 
               <Link className="underline ps-1" to="/user_signUp">
-                 Sign up
+                 Create account
               </Link>
               <br />
               now

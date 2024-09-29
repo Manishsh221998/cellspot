@@ -126,7 +126,7 @@ axiosInstance.post(api,formData)
         </p>
 
         <form className="mb-0 mt-6 space-y-4 rounded-lg p-10 shadow-lg sm:p-6 lg:p-8 bg-gradient-to-tr from-[#efffd8] to-[#e1f5ff]" onSubmit={submitHandler}>
-          <p className="text-center text-xl font-medium">Sign Up</p>
+          <p className="text-center text-xl font-medium">Create Account</p>
           <div>
             <label htmlFor="fname" className="sr-only">
               First Name
@@ -235,11 +235,11 @@ axiosInstance.post(api,formData)
             type="submit"
             className="block w-full shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
           >
-            Sign up
+           Create Account
           </button> 
 
           <p className="text-center text-sm text-gray-500">
-            Already registered?
+            Already have an account?
             <Link className="underline ms-1" to="/user_login">
               Log in
             </Link>

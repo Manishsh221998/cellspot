@@ -4,7 +4,7 @@ const ProtectedRoutes = () => {
 const isLogged=window.sessionStorage.getItem("user_id")
 console.log("User login id as token value:",isLogged);
 
-const isAdminLogged=window.sessionStorage.getItem("isAdminLogged")
+const isAdminLogged=window.localStorage.getItem("isAdminLogged")
 console.log("Admin login id as tokwn value:",isAdminLogged);
 
 return isAdminLogged?<Outlet/>:<Navigate to='/error'/>

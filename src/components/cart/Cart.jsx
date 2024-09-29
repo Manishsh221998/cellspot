@@ -3,7 +3,6 @@ import { end_points } from '../../api/url/api_url'
 import { useParams } from 'react-router-dom'
 import { axiosInstance } from '../../api/axiosInstance/axiosInstance'
 export let cnt=0;
-
 const Cart = () => {
     let{uid}=useParams()
 
@@ -32,24 +31,34 @@ const Cart = () => {
           console.log("error delete",err); 
         })
         }
-
+        let total=[];
+        let allTotal=0;
+        let gst=0;
+        let finalAmt=0;
   return (
-    <div className="my-28">
+    <div className="my-28 flex justify-center">
       <section>
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <header className="text-center">
-              <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">
-                Your Cart
+              <h1 className="divider md:text-3xl py-4 hover:text-transparent bg-clip-text bg-gradient-to-r from-[#19c5ff] via-[#13ff13] to-[#ffff48] font-bold  text-[#ff4444] sm:text-3xl">
+                Your Cart  
               </h1>
             </header>
 
             <div className="mt-8">
               <ul className="space-y-6">
                 {data?.map((x,i) => (
+                  
                   cnt=i+1,
 
-                  <li className="flex items-center gap-4">
+                  total.push(Math.floor(x?.prod_price)),
+                  allTotal=total.reduce((initial,current)=>initial+current),
+                  // console.log(allTotal),
+                  gst=Math.round(allTotal*.18),
+                  finalAmt=allTotal+gst, 
+
+                   <li className="flex items-center gap-4">
                     <img
                       src={x?.prod_img}
                       alt=""
@@ -119,23 +128,19 @@ const Cart = () => {
                   <dl className="space-y-0.5 text-sm text-gray-700">
                     <div className="flex justify-between">
                       <dt>Subtotal</dt>
-                      <dd>{ }</dd>
+                      <dd>{allTotal}</dd>
                     </div>
 
                     <div className="flex justify-between">
                 <dt>GST (18%)</dt>
                 
-                <dd>{}</dd>
+                <dd>{gst}</dd>
               </div>
 <hr/>
-                    {/* <div className="flex justify-between">
-                <dt>Discount</dt>
-                <dd>-£20</dd>
-              </div> */}
-
                     <div className="flex justify-between !text-base font-medium">
                       <dt>Total</dt>
-                      <dd>£200</dd>
+                      {}
+                      <dd>₹{finalAmt}</dd>
                     </div>
                   </dl>
 
@@ -165,7 +170,7 @@ const Cart = () => {
                   <div className="flex justify-end">
                     <button
                       
-                      className="block rounded bg-gray-700 px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
+                      className="block rounded bg-gray-700 hover:bg-gradient-to-r from-[#5fd7ff] via-[#6bff6b] to-[#ffff69] hover:text-black hover:shadow-lg hover:uppercase font-semibold  px-5 py-3 text-sm text-gray-100 transition hover:bg-gray-600"
                     >
                       Checkout
                     </button>
