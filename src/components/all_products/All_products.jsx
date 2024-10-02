@@ -87,7 +87,10 @@ const All_products = () => {
 
                 </div>
                 <div className="">
-              <Link to=""><button className='btn btn-accent' >View more</button>
+              {/* <Link to="">
+              <button className='btn btn-accent' >View more</button>
+              </Link>   */}
+              <Link to={`single_product/${v.id}`}><button className='btn btn-accent' >View more</button>
               </Link>  
               </div>
               </div>

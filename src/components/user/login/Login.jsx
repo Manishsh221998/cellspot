@@ -51,6 +51,7 @@ let passwordVerify=state.find((v)=>v.password===formData.password)
     // window.sessionStorage.setItem("token",uuid)
     window.sessionStorage.setItem("isLogged","true")
     navigate(`/user_profile/${emailVarify.id}`)
+    
     window.location.reload()
      window.location.reload()
 

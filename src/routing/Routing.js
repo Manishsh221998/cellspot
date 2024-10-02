@@ -36,6 +36,8 @@ let ALl_prod=lazy(()=>import('../components/all_products/All_products'))
                 <Route path='' element={<Home/>}/>
 
                 <Route path='all_product' element={<ALl_prod/>}/>
+                <Route path='all_product/single_product/:id' element={<SingleProduct/>}/>
+
                 <Route path='all_product/view_items/:category' element={<View_item/>}/>
                 <Route path='all_product/view_items/:category/single_product/:id' element={<SingleProduct/>}/>
                 <Route path='cart/:uid' element={<Cart/>}/>
