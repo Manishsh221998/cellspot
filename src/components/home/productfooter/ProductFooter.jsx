@@ -40,10 +40,11 @@ const ProductFooter = () => {
   
           <img
             alt=""
-            src="../asset/img3.jpg"
+            src="../asset/IMG5.WEBP"
             className="h-40 w-full object-cover sm:h-56 md:h-full rounded-lg shadow-xl hover:opacity-80"
           />
         </div>
+        
  
       </div>
     </div>

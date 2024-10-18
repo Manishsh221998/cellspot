@@ -45,17 +45,17 @@ const SingleProduct = () => {
     axiosInstance.post(api_cart,dataForCart)
     .then(res=>{
       console.log("axios response for cart section:",res.data);
-      nevigate(`/cart/${user_id}`)
+      user_id?nevigate(`/cart/${user_id}`):nevigate("/user_login")
     })
     .catch(err=>console.log("axios error for cart section:",err))
   }
 
   let{brand_name,category,model_no,color,price,product_details,warranty,prod_img}=data
   return (
-    <div className='mt-[100px]  mb-[90px]'> 
-  <div className='flex rounded-lg flex-wrap justify-center'>
+     <div className='mt-[140px] mb-[100px]'> 
+  <div className='flex rounded-lg flex-wrap justify-center items-center'>
       <div className="px-4 sm:px-0">
-        <img src={prod_img} alt="" className='h-[350px] w-[390px]' />
+        <img src={prod_img} alt="" className='h-[320px] w-[350px]'/>
        </div>
       <div className="mt-6 border-t border-gray-100 text-start">
         <dl className="divide-y divide-gray-100">
@@ -84,15 +84,14 @@ const SingleProduct = () => {
             <dd className="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{warranty}</dd>
           </div>
           <div className="text-end pt-2">
-           <button className='btn btn-warning btn-sm hover:shadow-lg' onClick={cartHandler}>Add to cart <MdOutlineShoppingCart />
+          <button className='btn btn-warning btn-sm hover:shadow-lg' onClick={cartHandler}>Add to cart <MdOutlineShoppingCart />
            </button>
            </div>
          </dl>
       </div>
     </div>
-
      </div>
-  )
+   )
 }
 
 export default SingleProduct
